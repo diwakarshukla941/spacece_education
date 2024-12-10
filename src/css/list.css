@@ -1,0 +1,198 @@
+/* Base Styling */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f8fc;
+    color: #333;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #ffcc00;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.app-title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.menu-icon {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+}
+
+/* Profile Section */
+.profile-section {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.add-button {
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.add-button:hover {
+    background-color: #e6b800;
+}
+
+/* Child List */
+.child-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.child-card {
+    background-color: #fff;
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.child-card:hover {
+    transform: scale(1.05);
+}
+
+.child-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.child-info {
+    width: 100%;
+}
+
+.child-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.child-age {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Level Buttons */
+.child-level {
+    margin-bottom: 20px;
+}
+
+.child-level p {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.level-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.level-buttons button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.level-buttons .active {
+    background-color: #ffcc00;
+    color: white;
+    border: none;
+}
+
+.level-buttons button:hover {
+    background-color: #ffcc00;
+    color: white;
+}
+
+/* Get Started Button */
+.get-started-btn {
+    background-color: #ffcc00;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.get-started-btn:hover {
+    background-color: #e6b800;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .child-card {
+        width: 100%;
+    }
+}

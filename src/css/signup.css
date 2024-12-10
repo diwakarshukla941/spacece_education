@@ -1,0 +1,117 @@
+/* General body styling */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Registration container */
+.login-container {
+    max-width: 400px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Logo */
+.logo {
+    width: 600px; /* Increase the width */
+    height: auto; /* Maintain the aspect ratio */
+    margin-bottom: 20px; /* Space between the logo and the form */
+    background-color: transparent;
+}
+
+/* Heading */
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: normal;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+/* Input fields */
+.form-control {
+    border-radius: 25px;
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+.otp-input-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.otp-input {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.otp-input:focus {
+    outline: none;
+    border-color: #ff9800;
+}
+
+/* Buttons */
+.btn-custom {
+    background-color: #ff9800;
+    border: none;
+    border-radius: 25px;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    position: relative;
+    width: 100%;
+}
+
+.btn-custom:hover {
+    background-color: #e68900;
+}
+
+/* Add a spinner next to the button */
+.btn-custom .spinner-border {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+}
+
+/* Bottom image */
+.bottom-image {
+    margin-top: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+/* Form input labels */
+label {
+    font-weight: bold;
+    text-align: left;
+    display: block;
+    margin-bottom: 8px;
+}
