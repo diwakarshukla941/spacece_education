@@ -44,10 +44,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             // If password doesn't match, set error message
             $error_message = "Invalid email or password.";
+            header('Location: ../index.php?error=' . urlencode($error_message));
+            exit();
         }
     } else {
         // If email doesn't exist in the database, set error message
-        $error_message = "No user found with this email.";
+        $error_message = "No user found with this email. Please Register ";
+        header('Location: ../index.php?error=' . urlencode($error_message));
+        exit();
     }
 
     // Redirect to login page with the error message
