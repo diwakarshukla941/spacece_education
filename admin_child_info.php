@@ -3,14 +3,12 @@ session_start();
 include 'db/db.php';
 
 // Check if the admin is logged in (optional, if needed)
-
 if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
     header("Location: ../index.php?error=" . urlencode("Unauthorized access."));
     exit();
 }
 
-
-// Fetch child info along with address details
+// Fetch child info along with address details and contact number
 $query = "
     SELECT 
         child_info.id AS child_id,
@@ -22,13 +20,18 @@ $query = "
         child_address.address_line2,
         child_address.city,
         child_address.state,
-        child_address.zipcode
+        child_address.zipcode,
+        user.contact_no
     FROM 
         child_info
     LEFT JOIN 
         child_address 
     ON 
         child_info.id = child_address.child_id
+    LEFT JOIN 
+        user 
+    ON 
+        child_info.user_id = user.id
     ORDER BY 
         child_info.id DESC
 ";
@@ -64,6 +67,7 @@ if (!$result) {
                     <th>City</th>
                     <th>State</th>
                     <th>Zip Code</th>
+                    <th>Contact No</th>
                 </tr>
             </thead>
             <tbody>
@@ -81,11 +85,17 @@ if (!$result) {
                         <td><?= htmlspecialchars($row['city'] ?? 'N/A') ?></td>
                         <td><?= htmlspecialchars($row['state'] ?? 'N/A') ?></td>
                         <td><?= htmlspecialchars($row['zipcode'] ?? 'N/A') ?></td>
+                        <td><?= htmlspecialchars($row['contact_no'] ?? 'N/A') ?></td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
         </table>
     </div>
 </div>
+
+<?php
+// Close the database connection
+mysqli_close($conn);
+?>
 </body>
 </html>

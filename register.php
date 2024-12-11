@@ -17,7 +17,7 @@
             </div>
 
             <h1 class="text-center mb-4">Sign Up</h1>
-            <form id="register-form" action="controller/register_action.php" method="POST">
+            <form id="register-form" action="controller/register_action.php" method="POST" onsubmit="return validateForm()">
                 <div class="form-group mb-3">
                     <label for="name">Enter Name</label>
                     <input type="text" class="form-control rounded" id="name" name="name" placeholder="Enter your name" required>
@@ -31,6 +31,7 @@
                 <div class="form-group mb-3">
                     <label for="contact">Phone Number</label>
                     <input type="text" class="form-control rounded" id="contact" name="contact" placeholder="Enter your phone number" required>
+                    <small id="contact-error" class="text-danger d-none">Phone number must be exactly 10 digits and contain only numbers.</small>
                 </div>
 
                 <div class="form-group mb-3">
@@ -66,6 +67,24 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
         crossorigin="anonymous"></script>
+
+    <script>
+        function validateForm() {
+            var contact = document.getElementById('contact').value;
+            var contactError = document.getElementById('contact-error');
+
+            // Check if contact number contains only 10 digits
+            var regex = /^[0-9]{10}$/;
+
+            if (!regex.test(contact)) {
+                contactError.classList.remove('d-none');
+                return false;
+            } else {
+                contactError.classList.add('d-none');
+                return true;
+            }
+        }
+    </script>
 </body>
 
 </html>
