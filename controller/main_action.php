@@ -4,7 +4,7 @@ include '../db/db.php';
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
-    die("You must be logged in to add a child.");
+    die("You must be logged in to book an appointment.");
 }
 
 $userId = $_SESSION['user_id'];
@@ -12,10 +12,19 @@ $userId = $_SESSION['user_id'];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $childName = htmlspecialchars(trim($_POST['child_name']));
     $childAge = (int)$_POST['child_age'];
+    $appointmentDate = $_POST['appointment_date'];
 
     // Validate inputs
     if (empty($childName)) die("Child's name is required.");
     if ($childAge < 0 || $childAge > 8) die("Invalid age selected.");
+    if (empty($appointmentDate)) die("Appointment date is required.");
+
+    // Validate appointment date format
+    $dateRegex = "/^\d{4}-\d{2}-\d{2}$/";
+    if (!preg_match($dateRegex, $appointmentDate)) die("Invalid date format.");
+    if (strtotime($appointmentDate) < strtotime(date("Y-m-d"))) {
+        die("Appointment date cannot be in the past.");
+    }
 
     // Handle file upload
     if (isset($_FILES['child_photo']) && $_FILES['child_photo']['error'] === UPLOAD_ERR_OK) {
@@ -38,9 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $photoPath = 'uploads/' . $fileName;
 
             // Insert child data into the database
-            $query = "INSERT INTO child_info (child_name, photo, age, user_id) VALUES ('$childName', '$photoPath', '$childAge', '$userId')";
+            $query = "INSERT INTO child_info (child_name, photo, age, appointment_date, user_id) 
+                      VALUES ('$childName', '$photoPath', '$childAge', '$appointmentDate', '$userId')";
             if (mysqli_query($conn, $query)) {
-                header("Location: ../list.php");
+                // Redirect to child_info.php after successful booking
+                header("Location: ../child_info.php");
                 exit();
             } else {
                 die("Error inserting data: " . mysqli_error($conn));

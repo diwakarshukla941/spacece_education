@@ -1,0 +1,234 @@
+/* General body styling */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+    /* Apply a more tailored style for the dropdown */
+    select.form-control {
+        border-radius: 25px;
+        padding: 2px 15px; /* Balanced padding */
+        font-size: 18px; /* Font size for better readability */
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        width: 100%;
+        box-sizing: border-box; /* Ensures padding doesn't overflow */
+        line-height: 1.5; /* Adjust line-height for proper text fitting */
+}
+
+
+
+
+/* Registration container */
+.login-container {
+    max-width: 700px; /* Wider for laptop view */
+    width: 90%; /* Adjust width for responsiveness */
+    margin: 0 auto;
+    padding: 50px; /* Increased padding for better spacing */
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+/* Logo */
+.logo {
+    width: 600px; /* Larger logo for laptops */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Heading */
+h1 {
+    font-size: 30px; /* Larger heading for laptops */
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: normal;
+    color: #555555;
+    margin-bottom: 30px;
+}
+
+/* Input fields */
+.form-control {
+    border-radius: 25px;
+    padding: 15px;
+    font-size: 18px; /* Larger font for readability */
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box; /* Ensure proper box-sizing */
+}
+
+/* Radio button group */
+.radio-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.radio-group .form-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.radio-group .form-check-input {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.radio-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555555;
+}
+
+/* Buttons */
+.btn-custom {
+    background-color: #ff9800;
+    border: none;
+    border-radius: 25px;
+    color: #ffffff;
+    padding: 15px 25px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    width: 100%;
+}
+
+.btn-custom:hover {
+    background-color: #e68900;
+}
+
+/* Bottom image */
+.bottom-image-container {
+    margin-top: 30px;
+    text-align: center; /* Center the bottom image */
+}
+
+.bottom-image {
+    width: 100%;
+    max-width: 400px; /* Adjusted for responsiveness */
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Form input labels */
+label {
+    font-weight: bold;
+    text-align: left;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+/* Form links */
+.text-center a {
+    color: #ff9800;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.text-center a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .login-container {
+        max-width: 600px; /* Adjust container width for smaller screens */
+        padding: 40px;
+    }
+
+    h1 {
+        font-size: 26px; /* Adjust heading size */
+    }
+
+    h2 {
+        font-size: 16px; /* Adjust subheading size */
+    }
+
+    .form-control {
+        font-size: 16px; /* Smaller font for inputs */
+        padding: 12px; /* Adjust padding */
+    }
+
+    .btn-custom {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        max-width: 90%; /* Make container fill most of the screen */
+        padding: 30px;
+    }
+
+    .logo {
+        width: 140px; /* Resize logo for tablets */
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 14px;
+    }
+
+    .form-control {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .btn-custom {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .radio-group {
+        flex-direction: column; /* Stack radio buttons on smaller screens */
+        gap: 10px;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px; /* Smaller padding for mobile phones */
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 12px;
+    }
+
+    .form-control {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .btn-custom {
+        font-size: 12px;
+        padding: 8px;
+    }
+}

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Child Enrollment</title>
+    <title>Book Appointment</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./src/css/form.css">
+    <link rel="stylesheet" href="./src/css/main.css">
 </head>
 <body>
 <div class="form-container">
@@ -18,6 +18,7 @@
     <form action="controller/main_action.php" method="POST" enctype="multipart/form-data">
         <label for="child_name">Child's Name:</label>
         <input type="text" id="child_name" name="child_name" placeholder="Enter your child's name" required>
+
         <label for="child_photo" class="mt-3">Upload Child's Photo:</label>
         <div class="upload-section d-flex align-items-center mt-2">
             <div class="image-preview">
@@ -27,6 +28,7 @@
                 <input type="file" id="child_photo" name="child_photo" accept="image/*" class="form-control" onchange="showPreview(event)">
             </div>
         </div>
+
         <label for="child_age" class="mt-3">Select Your Child's Age:</label>
         <input type="hidden" id="child_age" name="child_age">
         <div class="age-buttons">
@@ -34,9 +36,13 @@
                 <button type="button" class="age-btn" data-age="<?= $i ?>"><?= $i ?></button>
             <?php endfor; ?>
         </div>
-        <button type="submit" class="btn">Confirm</button>
+
+        <label for="appointment_date" class="mt-3">Select Appointment Date:</label>
+        <input type="date" id="appointment_date" name="appointment_date" class="form-control" required>
+
+        <button type="submit" class="btn mt-3">Book Appointment</button>
     </form>
-    
+
     <!-- Button to navigate to list.php -->
     <a href="list.php" class="btn btn-secondary mt-3">Go to List</a>
 </div>

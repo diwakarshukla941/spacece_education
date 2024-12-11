@@ -2,31 +2,20 @@
 body {
     background-color: #f8f9fa;
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
 }
 
-/* Registration container */
+/* Login container */
 .login-container {
-    max-width: 400px;
-    width: 90%;
-    margin: 0 auto;
-    padding: 30px;
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    text-align: center;
 }
 
 /* Logo */
 .logo {
-    width: 600px; /* Increase the width */
-    height: auto; /* Maintain the aspect ratio */
-    margin-bottom: 20px; /* Space between the logo and the form */
-    background-color: transparent;
+    width: 600px; /* Adjust logo size */
+    height: auto;
 }
 
 /* Heading */
@@ -34,41 +23,19 @@ h1 {
     font-size: 24px;
     font-weight: bold;
     color: #333333;
-    margin-bottom: 10px;
 }
 
 h2 {
     font-size: 16px;
     font-weight: normal;
     color: #555555;
-    margin-bottom: 20px;
 }
 
-/* Input fields */
+/* Form elements */
 .form-control {
     border-radius: 25px;
     padding: 10px 15px;
     font-size: 16px;
-}
-
-.otp-input-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.otp-input {
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    font-size: 24px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-}
-
-.otp-input:focus {
-    outline: none;
-    border-color: #ff9800;
 }
 
 /* Buttons */
@@ -82,36 +49,63 @@ h2 {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
-    position: relative;
-    width: 100%;
 }
 
 .btn-custom:hover {
     background-color: #e68900;
 }
 
-/* Add a spinner next to the button */
-.btn-custom .spinner-border {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: none;
+/* Custom alert for success message */
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px 20px;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.custom-alert button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #155724;
 }
 
 /* Bottom image */
 .bottom-image {
-    margin-top: 20px;
-    border-radius: 8px;
     width: 100%;
-    max-width: 300px;
     height: auto;
+    margin-top: 20px;
 }
 
-/* Form input labels */
-label {
-    font-weight: bold;
-    text-align: left;
-    display: block;
-    margin-bottom: 8px;
+/* Responsive design */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .logo {
+        width: 100%;
+        max-width: 600px; /* Ensure logo width doesn't exceed the container size */
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 14px;
+    }
 }

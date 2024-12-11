@@ -8,6 +8,7 @@ try {
     $contact = mysqli_real_escape_string($conn, $_POST['contact']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
     $confirm_password = mysqli_real_escape_string($conn, $_POST['confirm_password']);
+    $role = mysqli_real_escape_string($conn, $_POST['role']);
 
     // Check if passwords match
     if ($password !== $confirm_password) {
@@ -26,14 +27,14 @@ try {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Insert data into the database
-    $sql = "INSERT INTO user (fullname, email, contact_no, password) VALUES ('$name', '$email', '$contact', '$hashed_password')";
+    $sql = "INSERT INTO user (fullname, email, contact_no, password, role) VALUES ('$name', '$email', '$contact', '$hashed_password', '$role')";
 
     if (!mysqli_query($conn, $sql)) {
         throw new Exception('Error: ' . mysqli_error($conn));
     }
 
     // Registration successful - Redirect to login with success message
-    header("Location: ../login.php?success=" . urlencode('Registration successful!'));
+    header("Location: ../index.php?success=" . urlencode('Registration successful! Please Login Now'));
     exit();
 
 } catch (Exception $e) {

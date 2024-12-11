@@ -4,59 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="src/css/signup.css">
+    <title>Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/register.css">
 </head>
 
-<body>
+<body class="bg-warning d-flex justify-content-center align-items-center" style="min-height: 100vh;">
     <div class="container">
-        <div class="login-container">
+        <div class="login-container bg-white shadow p-4 rounded">
             <div class="text-center">
                 <img src="src/images/logo.png" alt="Logo" class="logo">
             </div>
 
-            <h1>Register</h1>
-            <h2>Home Learning Made Easy</h2>
-
+            <h1 class="text-center mb-4">Sign Up</h1>
             <form id="register-form" action="controller/register_action.php" method="POST">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                <div class="form-group mb-3">
+                    <label for="name">Enter Name</label>
+                    <input type="text" class="form-control rounded" id="name" name="name" placeholder="Enter your name" required>
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                <div class="form-group mb-3">
+                    <label for="email">Email Id</label>
+                    <input type="email" class="form-control rounded" id="email" name="email" placeholder="Enter your email" required>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label for="contact">Phone Number</label>
-                    <input type="text" class="form-control" id="contact" name="contact" placeholder="Enter your phone number" required>
+                    <input type="text" class="form-control rounded" id="contact" name="contact" placeholder="Enter your phone number" required>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                    <input type="password" class="form-control rounded" id="password" name="password" placeholder="Enter password" required>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label for="confirm-password">Confirm Password</label>
-                    <input type="password" class="form-control" id="confirm-password" name="confirm_password" placeholder="Confirm your password" required>
+                    <input type="password" class="form-control rounded" id="confirm-password" name="confirm_password" placeholder="Confirm your password" required>
                 </div>
 
-                <button type="submit" class="btn btn-custom btn-block">Register</button>
+                <div class="form-group mb-4">
+                    <label class="font-weight-bold" for="userRole">User Role</label>
+                    <select class="form-control rounded" id="userRole" name="role" required>
+                        <option value="parent">Parent</option>
+                        <option value="champion">Champion</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-warning w-100 rounded">Sign Up</button>
             </form>
 
-            <div class="bottom-image-container">
-                <img src="src/images/icon.jpg" alt="Visual Icon" class="bottom-image">
+            <div class="bottom-image-container mt-4">
+                <img src="src/images/icon.jpg" alt="Visual Icon" class="bottom-image img-fluid rounded">
             </div>
             <p class="text-center mt-3">
-                Already have an account? <a href="login.php">Login Now</a>
+                Already have an account? <a href="login.php" class="text-warning">Login Now</a>
             </p>
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
